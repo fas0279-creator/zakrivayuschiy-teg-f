@@ -1,1 +1,31 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main: 'Inter';
+  --font-main-title: 785;
+  --font-main-text: 400;
+  --font-main-text-color: #000000;
+  --font-main-size-title: 18px;
+  --font-main-size-text: 18px;
+  --font-accent: 'Press Start 2P';
+  --font-size-accent: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --font-size-accent-text: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --page-background-color: #ffffff;
+  --page-background-image:
+            repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+            repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+            linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  --header-background-color: #ffffff;
+  --header-padding-left-right: clamp(0px, calc(-134.634px + 35.902vw), 368px);
+  --card-padding-left-right: clamp(0px, calc(-130.282px + 34.742vw), 370px);
+  --lable-stroke-color: #ffffff;
+  --heart-contur-color: #000000;
+  --heart-main-body-color: transparent;
+  --heart-core-color: #ffffff;
+  --heart-sparks-color: #ff0000;
+  --focus-border-color: #000000;
+  --hover-button-color: #000000;
+  --hover-button-text-color: #ffffff;
+  --card-border-color: #000000;
+  --backdrop-background-color: rgb(0 0 0 / 0.75);
+}
+
+

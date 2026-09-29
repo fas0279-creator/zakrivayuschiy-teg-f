@@ -1,16 +1,380 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+    min-inline-size: 320px;
+    min-block-size: 100dvb;
+    font-family: var(--font-main), sans-serif;
+    font-variation-settings: "wght" var(--font-main-text);
+    font-size: var(--font-main-size-text);
+    line-height: 21px;
+    color: var(--font-main-text-color);
+    background-image: var(--page-background-image);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-color: var(--page-background-color);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 130px 0 130px 0;
+    background-color: var(--header-background-color);
+    border: 2px solid var(--card-border-color);
+    margin: 98px var(--header-padding-left-right) 96px var(--header-padding-left-right);
+}
+
+.header h1 {
+    font-family: var(--font-accent), sans-serif;
+    font-size: var(--font-size-accent);
+    line-height: 65px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header p {
+    font-family: var(--font-accent), sans-serif;
+    font-size: var(--font-size-accent-text);
+    line-height: 23px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-inline-size: 375px;
+    min-block-size: 327px;
+    background-color: var(--header-background-color);
+    border: 2px solid var(--card-border-color);
+    margin: 0 var(--card-padding-left-right) 0 var(--card-padding-left-right);
+}
+
+.card__title {
+    padding: 4px 10px;
+}
+
+.card__title h2 {
+    font-size: var(--font-main-size-title);
+    font-variation-settings: "wght" var(--font-main-title);
+    line-height: 22px;
+}
+
+.card__label-inage {
+    position: relative;
+}
+
+.card__image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__image-blank-slate {
+    filter: sepia(90%);
+}
+
+.card__image-work-out {
+    filter: invert(0.9);
+}
+
+.card__image-chase {
+    filter: grayscale(0.9);
+}
+
+.card__image-about-those-close-to-us {
+    filter: hue-rotate(-180deg);
+}
+
+.card__image-workaround-strategies {
+    filter: opacity(0.7);
+}
+
+.card__image-when-you-feel-like-giving-up {
+    filter: blur(3px) opacity(0.5);
+}
+
+.card__image-i-am-here-now {
+    filter: saturate(200%);
+}
+
+.card__label {
+    position: absolute;
+    font-family: var(--font-accent), sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    right: 25px;
+    top: 25px;
+    z-index: 1;
+    mix-blend-mode: hard-light;
+    opacity: 0.5;
+    text-shadow:
+        1px 0 0 var(--lable-stroke-color),
+        -1px 0 0 var(--lable-stroke-color),
+        0 1px 0 var(--lable-stroke-color),
+        0 -1px 0 var(--lable-stroke-color);
+}
+
+.card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 21px 25px 23px 25px;
+}
+
+.card p {
+    line-height: 21px;
+}
+
+.card__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding-right: 25px;
+    padding-bottom: 23px;
+}
+
+.card__like-button {
+    min-width: 130px;
+    min-height: 38px;
+    background-color: transparent;
+    border: 2px solid var(--card-border-color);
+    position: relative;
+    overflow: auto;
+}
+
+.card__like-button:focus {
+    outline: none;
+}
+
+.card__like-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--hover-button-color);
+    transform: translate(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before {
+    transform: translate(0);
+}
+
+.card__like-button span {
+    position: relative;
+    z-index: 1;
+    color: var(--hover-button-text-color);
+    mix-blend-mode: difference;
+}
+
+.card__like-button:focus-visible {
+    box-shadow: 2px 2px 0 0 var(--focus-border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.button__text {
+    font-family: var(--font-accent), sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13px;
+}
+
+.card__icon-button {
+    background-color: transparent;
+    border: 2px solid transparent;
+    overflow: auto;
+}
+
+.card__icon-button:focus {
+    outline: none;
+}
+
+.card__icon-button:focus-visible {
+    border: 2px solid var(--focus-border-color);
+}
+
+.like-icon {
+    display: block;
+}
+
+.like-icon .sparks {
+    opacity: 0;
+}
+
+.card__icon-button:hover {
+    cursor: pointer;
+}
+
+.card__icon-button:hover .core {
+    --heart-core-color: #000000;
+    transition: fill 0.3s;
+}
+
+.card__icon-button:hover .main-body {
+    --heart-main-body-color: #000000;
+    transition: fill 0.3s 0.03s;
+}
+
+.card__icon-button:active .core {
+    --heart-core-color: #ff0000;
+    transition: fill 0.3s;
+}
+
+.card__icon-button:active .main-body {
+    --heart-main-body-color: #ff0000;
+    transition: fill 0.3s 0.05s;
+}
+
+.like-icon.is-liked .core {
+    --heart-core-color: #ff0000;
+    transition: fill 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+    --heart-main-body-color: #ff0000;
+    transition: fill 0.3s 0.05s;
+}
+
+.like-icon.is-liked .contour {
+    --heart-contur-color: #ff0000;
+    transition: fill 0.3s 0.06s;
+}
+
+.like-icon.is-liked .heart {
+    animation: heart-like 0.3s 0.1s ease-in;
+    transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+    animation: heart-sparks 0.3s 0.3s ease-in;
+    transform-origin: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 100px 0;
+}
+
+.save-as-a-memory {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 55px;
+    border: 2px solid var(--card-border-color);
+    padding: 0 18px 0 18px;
+}
+
+.floppy {
+    display: block;
+    width: 21px;
+    height: 21px;
+}
+
+.save__popup[open] {
+    display: grid;
+    grid-template-columns: min-content 234px;
+    grid-template-rows: auto 1fr;
+    gap: 30px;
+    min-height: 191px;
+    padding: 30px;
+}
+
+.save__popup[open] .floppy {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 39px;
+    height: 39px;
+}
+
+.save__popup[open] p {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 21px;
+}
+
+.save__popup[open] button {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    min-width: 293px;
+    min-height: 38px;
+    background-color: transparent;
+    border: 2px solid var(--card-border-color);
+    line-height: 13px;
+    text-transform: uppercase;
+}
+
+dialog::backdrop {
+    background-color: var(--backdrop-background-color);
+    backdrop-filter: blur(10px);
+}
+
+@supports (-webkit-text-stroke: 1px var(--lable-stroke-color)) {
+    .card__label {
+        -webkit-text-stroke: 1px var(--lable-stroke-color);
+        text-shadow: none;
+    }
+}
+
+@media (width <= 375px) {
+    .header {
+        padding: 120px 0 120px 0;
+        margin: 100px var(--header-padding-left-right) 100px var(--header-padding-left-right);
+    }
+
+    .header h1 {
+        line-height: 49px;
+    }
+
+    .header p {
+        line-height: 14px;
+    }
+
+    .card__text {
+        padding: 23px 25px 23px 25px;
+    }
+
+    .footer {
+        padding-top: 49px;
+    }
+
+    .save-as-a-memory {
+        flex-direction: column;
+        min-width: 306px;
+        min-height: 84px;
+        padding: 16px 0 16px 0;
+    }
+
+    .floppy {
+        align-self: center;
+        width: 28px;
+        height: 28px;
+    }
+
+    .save__popup[open] {
+        grid-template-columns: min-content 204px;
+        min-width: 341px;
+    }
+
+    .save__popup[open] button {
+        min-width: 261px;
+    }
 }
