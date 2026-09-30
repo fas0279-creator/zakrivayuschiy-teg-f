@@ -1,7 +1,7 @@
 :root {
   --font-main: 'Inter';
-  --font-main-title: 785;
-  --font-main-text: 400;
+  --font-weight-main-title: 785;
+  --font-weight-main-text: 400;
   --font-main-text-color: #000000;
   --font-main-size-title: 18px;
   --font-main-size-text: 18px;
@@ -24,6 +24,8 @@
   --focus-border-color: #000000;
   --hover-button-color: #000000;
   --hover-button-text-color: #ffffff;
+  --button-border-color: #000000;
+  --button-background-color: #ffffff;
   --card-border-color: #000000;
   --backdrop-background-color: rgb(0 0 0 / 0.75);
 }
